@@ -1,0 +1,246 @@
+Team,Event,X,Y,X2,Y2
+Reading,Cross,53,84,13,53
+Reading,Turnover/Loss,16,85,13,81
+Reading,Ball Recovery,10,83,7,84
+Reading,Pass,5,86,5,93
+Reading,Cross,5,89,2,58
+Reading,Turnover/Loss,42,5,17,11
+Reading,Ball Recovery,21,6,-,-
+Reading,Pass,11,13,16,7
+Reading,Cross,16,9,10,43
+Reading,Pass,41,99,9,75
+Reading,Cross,9,71,9,41
+Reading,Shot,9,41,1,41
+Reading,Ball Recovery,4,30,-,-
+Reading,Cross,1,32,6,47
+Reading,Ball Recovery,24,49,-,-
+Reading,Turnover/Loss,10,49,-,-
+Reading,Pass,30,65,36,86
+Reading,Dribble,36,86,18,88
+Reading,Turnover/Loss,19,87,-,-
+Reading,Ball Recovery,39,83,-,-
+Reading,Pass,43,82,59,69
+Reading,Pass,55,53,57,34
+Reading,Turnover/Loss,54,26,-,-
+Reading,Pass,41,0,18,13
+Reading,Turnover/Loss,17,18,-,-
+Reading,Pass,69,70,87,64
+Reading,Clearance,95,58,54,86
+Reading,Pass,85,63,57,62
+Reading,Dribble,56,58,66,58
+Reading,Pass,66,58,78,61
+Reading,Pass,78,61,39,75
+Reading,Turnover/Loss,39,75,-,-
+Reading,Pass,67,42,44,49
+Reading,Pass,44,49,33,48
+Reading,Turnover/Loss,32,48,-,-
+Reading,Clearance,69,86,33,68
+Reading,Turnover/Loss,35,69,44,62
+Reading,Ball Recovery,44,63,-,-
+Reading,Pass,43,66,35,90
+Reading,Dribble,35,87,38,72
+Reading,Pass,38,72,29,34
+Reading,Dribble,29,33,20,50
+Reading,Dribble,20,50,27,46
+Reading,Pass,27,47,31,58
+Reading,Pass,31,58,14,66
+Reading,Turnover/Loss,14,67,-,-
+Reading,Pass,14,99,9,63
+Reading,Pass,9,63,8,41
+Reading,Shot,9,42,0,42
+Reading,Corner Kick,1,0,-,-
+Reading,Cross,1,2,9,69
+Reading,Shot,9,68,1,56
+Reading,Ball Recovery,11,62,-,-
+Reading,Pass,11,61,19,58
+Reading,Cross,18,56,1,64
+Reading,Turnover/Loss,1,64,-,-
+Reading,Ball Recovery,72,66,-,-
+Reading,Pass,72,65,56,64
+Reading,Turnover/Loss,60,62,-,-
+Reading,Clearance,72,74,55,98
+Reading,Ball Recovery,61,81,-,-
+Reading,Dribble,60,81,54,68
+Reading,Pass,54,68,15,70
+Reading,Dribble,15,70,10,83
+Reading,Cross,9,84,17,49
+Reading,Turnover/Loss,17,52,-,-
+Reading,Ball Recovery,40,75,-,-
+Reading,Pass,41,74,32,50
+Reading,Pass,32,48,21,37
+Reading,Pass,21,37,11,37
+Reading,Shot,11,36,1,39
+Reading,Corner Kick,1,1,-,-
+Reading,Cross,1,1,1,49
+Reading,Turnover/Loss,1,50,-,-
+Reading,Ball Recovery,48,95,-,-
+Reading,Clearance,42,95,23,62
+Reading,Pass,22,63,32,56
+Reading,Pass,31,57,23,75
+Reading,Pass,22,74,9,83
+Reading,Dribble,8,82,13,82
+Reading,Dribble,13,82,6,82
+Reading,Cross,6,83,6,73
+Reading,Corner Kick,1,98,-,-
+Reading,Pass,0,97,7,96
+Reading,Dribble,7,95,8,82
+Reading,Pass,7,82,9,87
+Reading,Pass,9,88,13,83
+Reading,Turnover/Loss,10,84,-,-
+Reading,Ball Recovery,59,85,-,-
+Reading,Clearance,59,85,28,83
+Reading,Turnover/Loss,28,83,-,-
+Reading,Ball Recovery,27,83,-,-
+Reading,Turnover/Loss,26,84,-,-
+Reading,Ball Recovery,80,24,-,-
+Reading,Pass,80,23,92,44
+Reading,Pass,91,54,29,76
+Reading,Dribble,32,76,16,57
+Reading,Turnover/Loss,17,56,-,-
+Reading,Ball Recovery,19,58,-,-
+Reading,Dribble,18,58,21,52
+Reading,Pass,21,51,21,29
+Reading,Dribble,21,28,4,30
+Reading,Cross,5,30,4,49
+Reading,Turnover/Loss,3,49,-,-
+Reading,Ball Recovery,64,57,-,-
+Reading,Pass,64,57,73,74
+Reading,Clearance,73,74,53,63
+Reading,Turnover/Loss,53,64,-,-
+Reading,Ball Recovery,66,57,-,-
+Reading,Pass,65,56,81,70
+Reading,Clearance,82,71,50,50
+Reading,Ball Recovery,74,59,-,-
+Reading,Pass,73,57,94,54
+Reading,Clearance,93,54,65,66
+Reading,Turnover/Loss,65,67,-,-
+Reading,Clearance,86,66,57,98
+Reading,Clearance,86,83,82,98
+Reading,Ball Recovery,78,96,-,-
+Reading,Dribble,77,95,70,94
+Reading,Pass,69,93,64,88
+Reading,Turnover/Loss,64,88,-,-
+Reading,Pass,65,87,88,67
+Reading,Pass,84,68,79,35
+Reading,Pass,78,35,60,51
+Reading,Pass,60,51,41,39
+Reading,Turnover/Loss,40,39,-,-
+Reading,Ball Recovery,94,26,-,-
+Reading,Pass,95,32,80,67
+Reading,Dribble,80,68,77,75
+Reading,Pass,76,76,62,85
+Reading,Pass,62,85,72,84
+Reading,Clearance,72,83,15,97
+Reading,Ball Recovery,36,91,-,-
+Reading,Dribble,36,90,8,84
+Reading,Cross,8,85,0,48
+Reading,Ball Recovery,82,78,-,-
+Reading,Clearance,82,77,71,71
+Reading,Pass,71,70,65,83
+Reading,Turnover/Loss,65,83,-,-
+Reading,Ball Recovery,83,78,-,-
+Reading,Pass,82,78,80,66
+Reading,Turnover/Loss,80,66,-,-
+Windsor,Shot,80,67,100,60
+Windsor,Corner Kick,99,99,-,-
+Windsor,Cross,100,98,91,50
+Reading,Clearance,91,50,91,80
+Windsor,Cross,81,87,92,42
+Reading,Ball Recovery,93,28,-,-
+Reading,Clearance,93,28,55,17
+Reading,Ball Recovery,79,0,-,-
+Reading,Ball Recovery,40,1,-,-
+Reading,Pass,40,1,14,9
+Reading,Turnover/Loss,13,8,15,0
+Reading,Ball Recovery,35,7,45,10
+Reading,Clearance,45,10,20,9
+Reading,Turnover/Loss,19,8,-,-
+Reading,Clearance,56,11,26,7
+Windsor,Dribble,60,10,88,16
+Windsor,Cross,88,16,89,35
+Reading,Ball Recovery,90,36,-,-
+Reading,Pass,89,35,81,17
+Reading,Clearance,81,17,25,40
+Reading,Turnover/Loss,25,40,-,-
+Reading,Ball Recovery,92,66,-,-
+Reading,Pass,90,63,83,31
+Reading,Dribble,83,31,72,16
+Reading,Pass,72,16,62,2
+Reading,Pass,62,1,73,16
+Reading,Pass,73,15,88,44
+Reading,Pass,83,55,80,67
+Reading,Pass,81,65,81,25
+Reading,Pass,82,25,93,50
+Reading,Clearance,93,51,67,8
+Reading,Pass,67,8,54,9
+Reading,Turnover/Loss,54,9,-,-
+Windsor,Pass,59,26,91,59
+Reading,Ball Recovery,91,57,-,-
+Reading,Dribble,87,54,73,66
+Reading,Clearance,73,66,21,71
+Reading,Turnover/Loss,21,71,-,-
+Reading,Ball Recovery,54,36,-,-
+Reading,Pass,54,35,33,11
+Reading,Dribble,32,10,39,12
+Reading,Pass,39,13,56,14
+Reading,Dribble,55,14,50,10
+Reading,Cross,50,10,10,38
+Reading,Turnover/Loss,8,41,-,-
+Reading,Cross,43,23,2,60
+Reading,Turnover/Loss,2,59,-,-
+Reading,Ball Recovery,9,99,-,-
+Reading,Cross,8,98,6,61
+Reading,Ball Recovery,9,64,-,-
+Reading,Dribble,9,65,14,63
+Reading,Dribble,14,63,12,69
+Reading,Pass,12,68,13,85
+Reading,Dribble,13,85,7,72
+Reading,Cross,6,72,7,58
+Reading,Corner Kick,1,99,-,-
+Reading,Cross,1,98,8,30
+Reading,Shot Off Target,6,30,0,35
+Windsor,Pass,50,82,87,14
+Windsor,Cross,88,14,91,38
+Reading,Clearance,90,37,57,37
+Reading,Turnover/Loss,56,37,-,-
+Reading,Pass,63,0,45,19
+Reading,Dribble,45,18,54,19
+Reading,Pass,54,19,64,18
+Reading,Pass,64,18,92,50
+Reading,Pass,87,48,82,25
+Reading,Clearance,83,24,27,4
+Reading,Turnover/Loss,27,4,-,-
+Reading,Clearance,43,11,43,34
+Reading,Turnover/Loss,43,34,-,-
+Reading,Clearance,55,55,20,65
+Reading,Turnover/Loss,20,66,-,-
+Reading,Ball Recovery,59,59,-,-
+Reading,Clearance,60,59,24,73
+Reading,Pass,24,73,13,52
+Reading,Turnover/Loss,12,52,-,-
+Reading,Ball Recovery,58,37,-,-
+Reading,Turnover/Loss,47,30,-,-
+Windsor,Pass,54,17,66,3
+Windsor,Dribble,65,3,88,14
+Windsor,Cross,88,14,93,35
+Reading,Clearance,95,60,46,23
+Reading,Dribble,46,23,30,66
+Reading,Turnover/Loss,30,67,35,60
+Reading,Cross,33,61,7,35
+Reading,Pass,95,62,40,86
+Reading,Turnover/Loss,40,86,-,-
+Reading,Pass,21,63,21,52
+Reading,Turnover/Loss,24,51,-,-
+Reading,Ball Recovery,25,52,-,-
+Reading,Pass,22,52,18,42
+Reading,Dribble,18,41,11,19
+Reading,Dribble,10,19,18,19
+Reading,Cross,18,19,8,43
+Reading,Ball Recovery,4,89,-,-
+Reading,Cross,2,89,12,66
+Reading,Turnover/Loss,12,67,-,-
+Reading,Ball Recovery,73,76,-,-
+Reading,Pass,76,73,95,60
+Reading,Clearance,95,60,23,93
+Reading,Dribble,23,93,18,93
+Reading,Turnover/Loss,17,93,-,-

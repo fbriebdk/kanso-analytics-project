@@ -1,0 +1,33 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# Power BI temp / desktop
+*.pbix.autosave
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large media / archives
+*.mp4
+*.mov
+*.avi
+*.zip
+*.7z
+*.rar
+
+# Python outputs
+outputs/
+
+outputs/*
+!outputs/.gitkeep
+!outputs/final_*.png
