@@ -95,13 +95,13 @@ The Power BI dashboard is designed to:
 ## 📊 Example Visuals
 
 ### Final Third Entries
-(assets/final_third_entries.png)
+![Final Third Entries](assets/reading_final_third_entries.png)
 
 ### Shot Map
-(assets/reading_shot_map_normalized.png)
+![Shot Map](assets/reading_shot_map_normalized.png)
 
 ### Progressive Actions
-(assets/progressive_actions.png)
+![Progressive Actions](assets/reading_progressive_actions.png)
 
 ---
 
