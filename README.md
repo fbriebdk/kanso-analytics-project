@@ -69,7 +69,7 @@ kanso_analytics_project/
 
 ## 📈 Key Insights
 
-- Reading produced 58 progressive actions, indicating strong ability to move the ball forward.
+- Reading City FC produced 58 progressive actions, indicating strong ability to move the ball forward.
 - However, only 28 final third entries and 12 box entries were generated.
 - This resulted in just 5 shots.
 
@@ -77,7 +77,7 @@ kanso_analytics_project/
 
 ### 👉 Insight:
 
-Reading are effective at progressing into advanced areas, but struggle to convert possession into high-quality scoring opportunities. This suggests inefficiency in final third decision-making and chance creation.
+Reading City FC are effective at progressing into advanced areas, but struggle to convert possession into high-quality scoring opportunities. This suggests inefficiency in final third decision-making and chance creation.
 
 ---
 
