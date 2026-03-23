@@ -116,6 +116,6 @@ The Power BI dashboard is designed to:
 
 ## 📬 Contact
 
-Created by Liam
-For collaboration or analytics opportunities, feel free to connect.
-LinkedIN: (https://www.linkedin.com/in/liam-bugeja-9957a0208/)
+- Created by Liam,
+- For collaboration or analytics opportunities, feel free to connect.
+- LinkedIN: (https://www.linkedin.com/in/liam-bugeja-9957a0208/)
