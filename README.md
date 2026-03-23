@@ -98,7 +98,7 @@ The Power BI dashboard is designed to:
 (assets/final_third_entries.png)
 
 ### Shot Map
-(assets/shot_map.png)
+(assets/reading_shot_map_normalized.png)
 
 ### Progressive Actions
 (assets/progressive_actions.png)
