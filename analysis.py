@@ -334,10 +334,13 @@ prog_df = df[(df["Team"]=="Reading")&
 fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Progressive Actions")
 fig.patch.set_facecolor("#133617")
 
-arr = pitch.arrows(prog_df["X"],prog_df["Y"],prog_df["X2"],prog_df["Y2"],
-                   ax=ax,width=2,headwidth=5,headlength=5,
-                   alpha=0.95,color=EVENT_COLOR)
-add_yellow_outline(arr,width=2)
+lc = pitch.lines(prog_df['X'], prog_df['Y'],
+                 prog_df['X2'], prog_df['Y2'],
+                 lw=4,
+                 transparent=True,
+                 comet=True,
+                 color=EVENT_COLOR,
+                 ax=ax)
 
 plt.savefig("assets/reading_progressive_actions.png",dpi=300,bbox_inches="tight")
 plt.show()
@@ -371,42 +374,59 @@ reading_regain_outcomes.to_csv("outputs/reading_regain_outcomes.csv",index=False
 
 
 # =========================================================
-# 20. FINAL THIRD ENTRY MAP (READING) – MATCHING SAMPLE STYLE
+# 20. READING FINAL THIRD ENTRIES — COLOUR-CODED LINES
 # =========================================================
+from mplsoccer import Pitch
+from scipy.ndimage import gaussian_filter  # (not required but in imports already)
+
+# --- Filter and clean
 fte_df = df[
-    (df["Team"] == "Reading")
-    & (df["FinalThirdEntry"] == 1)
-    & (df["X2"].notna()) & (df["Y2"].notna())
+    (df["Team"] == "Reading") &
+    (df["FinalThirdEntry"] == 1) &
+    (df["X2"].notna()) & (df["Y2"].notna())
 ].copy()
 
-# Color palette (same feel as your image)
+fte_df["X"]  = fte_df["X"].clip(0, 100)
+fte_df["Y"]  = fte_df["Y"].clip(0, 100)
+fte_df["X2"] = fte_df["X2"].clip(0, 100)
+fte_df["Y2"] = fte_df["Y2"].clip(0, 100)
+
+# --- Colour palette (vivid & consistent)
 event_colors = {
-    "Cross":        "#C77DFF",  # violet‑purple
-    "Turnover/Loss":"#B0B0B0",  # grey
     "Pass":         "#1A2E6F",  # navy
-    "Dribble":      "#39FF8F",  # green
-    "Clearance":    "#F8F9FA"   # light white‑grey
+    "Cross":        "#C77DFF",  # violet‑purple
+    "Dribble":      "#39FF8F",  # neon green
+    "Clearance":    "#F8F9FA",  # light grey
+    "Turnover/Loss":"#B0B0B0"   # grey
 }
 
-fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Final Third Entries")
+# --- Pitch setup
+fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Final Third Entries (By Action Type)")
 fig.patch.set_facecolor("#133617")
 
+# --- Plot each action type as comet-style lines
 for event_name, color in event_colors.items():
     subset = fte_df[fte_df["Event"] == event_name]
     if subset.empty:
         continue
 
-    arr = pitch.arrows(
-        subset["X"], subset["Y"], subset["X2"], subset["Y2"],
-        ax=ax, width=2, headwidth=5, headlength=5,
-        color=color, alpha=0.95, label=event_name
+    pitch.lines(
+        subset["X"], subset["Y"],
+        subset["X2"], subset["Y2"],
+        ax=ax,
+        lw=4,
+        color=color,
+        transparent=True,
+        comet=True,
+        alpha=0.9,
+        label=event_name
     )
-    add_black_outline(arr, width=2)
 
-# Legend
-ax.legend(loc="upper right", fontsize=9, title="Event Type")
+ax.legend(loc="upper right")
 
-plt.savefig("assets/reading_final_third_entries_colored.png", dpi=300, bbox_inches="tight")
+# --- Save
+plt.savefig("assets/reading_final_third_entries_lines_colored.png",
+            dpi=300, bbox_inches="tight", facecolor="#133617")
 plt.show()
 
 
@@ -474,10 +494,14 @@ cross_df = df[(df["Team"]=="Reading") &
 fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Crosses")
 fig.patch.set_facecolor("#133617")
 
-arr = pitch.arrows(cross_df["X"],cross_df["Y"],cross_df["X2"],cross_df["Y2"],
-                   ax=ax,width=2,headwidth=5,headlength=5,
-                   color=EVENT_COLOR,alpha=0.95)
-add_yellow_outline(arr,width=2)
+lc = pitch.lines(cross_df['X'], cross_df['Y'],
+                 cross_df['X2'], cross_df['Y2'],
+                 lw=4,
+                 transparent=True,
+                 comet=True,
+                 color=EVENT_COLOR,
+                 ax=ax)
+
 plt.savefig("assets/reading_crosses.png",dpi=300,bbox_inches="tight")
 plt.show()
 
@@ -485,23 +509,31 @@ plt.show()
 # =========================================================
 # 23. DRIBBLES MAP (READING)
 # =========================================================
-dribble_df = df[(df["Team"]=="Reading") &
-                (df["IsDribble"]==1) &
+dribble_df = df[(df["Team"] == "Reading") &
+                (df["IsDribble"] == 1) &
                 (df["X2"].notna()) & (df["Y2"].notna())].copy()
 
 fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Dribbles")
 fig.patch.set_facecolor("#133617")
 
-arr = pitch.arrows(dribble_df["X"],dribble_df["Y"],dribble_df["X2"],dribble_df["Y2"],
-                   ax=ax,width=2,headwidth=5,headlength=5,
-                   color=EVENT_COLOR,alpha=0.95)
-add_yellow_outline(arr,width=2)
-plt.savefig("assets/reading_dribbles.png",dpi=300,bbox_inches="tight")
+lc = pitch.lines(dribble_df['X'], dribble_df['Y'],
+                 dribble_df['X2'], dribble_df['Y2'],
+                 lw=4,
+                 transparent=True,
+                 comet=True,
+                 color=EVENT_COLOR,
+                 ax=ax)
+
+# (optional) Legend
+# ax.legend(['dribbles'], facecolor='#133617', edgecolor='none', fontsize=14, loc='upper left')
+
+plt.savefig("assets/reading_dribbles.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
+
 # =========================================================
-# 24. TURNOVERS MAP (READING) — DANGER COLOR-CODED
+# 24. TURNOVERS MAP (READING) — DANGER COLOR-CODED (NO BOX)
 # =========================================================
 from matplotlib.colors import LinearSegmentedColormap, Normalize
 from matplotlib.cm import ScalarMappable
@@ -513,8 +545,6 @@ turnover_df = df[
 ].copy()
 
 # ── Danger Score ──────────────────────────────────────────────────────────────
-# Right post in Opta coords: (100, 50)
-# Closer = higher danger → invert distance so high score = more dangerous
 RIGHT_POST_X = 100
 RIGHT_POST_Y = 50
 
@@ -523,28 +553,26 @@ turnover_df["DistToRightPost"] = np.sqrt(
     (turnover_df["Y"] - RIGHT_POST_Y) ** 2
 )
 
-# Normalize: closer = score→1 (critical), farther = score→0 (safe)
 max_dist = turnover_df["DistToRightPost"].max()
 min_dist = turnover_df["DistToRightPost"].min()
 
 turnover_df["DangerScore"] = 1 - (
     (turnover_df["DistToRightPost"] - min_dist) /
-    (max_dist - min_dist + 1e-9)  # avoid div-by-zero
+    (max_dist - min_dist + 1e-9)
 )
 
 # ── Custom Colormap: green → yellow → red ────────────────────────────────────
 danger_cmap = LinearSegmentedColormap.from_list(
     "turnover_danger",
-    ["#2DC653", "#F5E700", "#FF2D2D"],  # safe → warning → critical
+    ["#2DC653", "#F5E700", "#FF2D2D"],
     N=256
 )
-
 norm = Normalize(vmin=0, vmax=1)
 
 # ── Plot ──────────────────────────────────────────────────────────────────────
 pitch = Pitch(
     pitch_type="opta",
-    pitch_color="#133617",       # deep dark green — more premium feel
+    pitch_color="#133617",
     line_color="#c8d6c8",
     linewidth=1.8,
     stripe=False,
@@ -558,7 +586,7 @@ fig.patch.set_facecolor("#133617")
 for _, row in turnover_df.iterrows():
     danger  = row["DangerScore"]
     color   = danger_cmap(norm(danger))
-    size    = 80 + danger * 220   # critical = bigger dot
+    size    = 80 + danger * 220
 
     sc = pitch.scatter(
         row["X"], row["Y"],
@@ -599,17 +627,6 @@ plt.setp(cbar.ax.yaxis.get_ticklabels(), color="white", fontsize=8)
 cbar.set_ticks([0, 0.25, 0.5, 0.75, 1.0])
 cbar.set_ticklabels(["0%", "25%", "50%", "75%", "100%"])
 
-# ── Danger zone shading (right penalty box area) ──────────────────────────────
-danger_zone = plt.Rectangle(
-    (82, 21), 18, 58,
-    linewidth=1.5,
-    edgecolor="#FF2D2D",
-    facecolor="#FF2D2D",
-    alpha=0.07,
-    zorder=1
-)
-ax.add_patch(danger_zone)
-
 # ── Annotate total critical turnovers (DangerScore > 0.65) ───────────────────
 critical_count = (turnover_df["DangerScore"] > 0.65).sum()
 total_count    = len(turnover_df)
@@ -623,7 +640,7 @@ ax.text(
     va="bottom"
 )
 
-# ── Title & subtitle ──────────────────────────────────────────────────────────
+# ── Title ────────────────────────────────────────────────────────────────────
 ax.set_title(
     "Reading — Turnover Danger Map",
     fontsize=18,
@@ -636,8 +653,8 @@ os.makedirs("assets", exist_ok=True)
 plt.savefig("assets/reading_turnovers_danger.png", dpi=300,
             bbox_inches="tight", facecolor="#0a1a0c")
 plt.show()
-print(f"Turnover danger map saved. Critical: {critical_count}/{total_count}")
 
+print(f"Turnover danger map saved. Critical: {critical_count}/{total_count}")
 
 
 # =========================================================
@@ -650,55 +667,221 @@ box_df = df[(df["Team"]=="Reading") &
 fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Box Entries")
 fig.patch.set_facecolor("#133617")
 
-arr = pitch.arrows(box_df["X"],box_df["Y"],box_df["X2"],box_df["Y2"],
-                   ax=ax,width=2,headwidth=5,headlength=5,
-                   color=EVENT_COLOR,alpha=0.95)
-add_yellow_outline(arr,width=2)
+lc = pitch.lines(box_df['X'], box_df['Y'],
+                 box_df['X2'], box_df['Y2'],
+                 lw=4,
+                 transparent=True,
+                 comet=True,
+                 color=EVENT_COLOR,
+                 ax=ax)
+
 plt.savefig("assets/reading_box_entries.png",dpi=300,bbox_inches="tight")
 plt.show()
 
 print("\nAll Reading event maps rendered with navy-blue and yellow outlines.")
 
 # =========================================================
-# 26. SHOT LOCATION HEATMAP (READING)
+# 27. READING ACTION START HEATMAP
 # =========================================================
+from scipy.ndimage import gaussian_filter
 from matplotlib.colors import LinearSegmentedColormap
 
-# Filter to Reading shots
-# heat_df = df[
-#     (df["Team"] == "Reading") &
-#     (df["Event"].isin(["Shot", "Shot Off Target"]))
-# ].copy()
+# Filter + clean
+action_df = df[df["Team"] == "Reading"].copy()
+action_df["X"] = action_df["X"].clip(0, 100)
+action_df["Y"] = action_df["Y"].clip(0, 100)
+action_df = action_df.dropna(subset=["X", "Y"])
 
-heat_df = df[df["Team"]=="Reading"].copy()
-
+# Draw pitch
 fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Action Start Heatmap")
 fig.patch.set_facecolor("#133617")
 
-# Custom colormap – blue→yellow gradient for clarity on green pitch
-colors = ["blue", "cyan", "limegreen", "yellow", "orange", "red"]
-custom_cmap = LinearSegmentedColormap.from_list("reading_heat", colors)
+# Bin + smooth
+bin_stat = pitch.bin_statistic(
+    action_df["X"], action_df["Y"], statistic="count", bins=(50, 50)
+)
+bin_stat["statistic"] = gaussian_filter(bin_stat["statistic"], sigma=2)
 
-# Draw density
-pitch.kdeplot(
-    x=heat_df["X"],
-    y=heat_df["Y"],
-    ax=ax,
-    fill=True,
-    levels=100,
-    cmap=custom_cmap,
-    shade_lowest=False,
-    alpha=0.9,
-    thresh=0.05
+# Custom cmap (dark → yellow → red)
+cmap = LinearSegmentedColormap.from_list(
+    "reading_heat", ["#133617", "#F5E700", "#FF6B00", "#FF0000"]
 )
 
-# Optional: overlay actual shot points
+# Plot smooth heatmap
+pcm = pitch.heatmap(bin_stat, ax=ax, cmap=cmap, edgecolors="none", alpha=0.9, zorder=1)
+
+# Re‑draw pitch lines on top
+pitch.draw(ax=ax)
+
+# Optional light scatter overlay
 pitch.scatter(
-    heat_df["X"], heat_df["Y"],
-    ax=ax,
-    s=20, c='blue', edgecolors="white", linewidths=0.4, alpha=0.6
+    action_df["X"], action_df["Y"], ax=ax, s=10, color="#efefef", alpha=0.15, zorder=11
 )
 
-plt.savefig("assets/reading_action_start_heatmap.png", dpi=300, bbox_inches="tight")
+# Colorbar
+cbar = fig.colorbar(pcm, ax=ax, shrink=0.6, pad=0.02)
+cbar.outline.set_edgecolor("#efefef")
+cbar.ax.yaxis.set_tick_params(color="#efefef")
+plt.setp(plt.getp(cbar.ax.axes, "yticklabels"), color="#efefef", fontsize=8)
+cbar.set_label("Action Density", color="#efefef", fontsize=9)
+
+# Save
+plt.savefig("assets/reading_action_start_heatmap.png", dpi=300,
+            bbox_inches="tight", facecolor="#133617")
 plt.show()
 
+# =========================================================
+# 28. READING BALL RECOVERIES HEATMAP
+# =========================================================
+recover_df = df[(df["Team"] == "Reading") & (df["IsRegain"] == 1)].copy()
+recover_df["X"] = recover_df["X"].clip(0, 100)
+recover_df["Y"] = recover_df["Y"].clip(0, 100)
+recover_df = recover_df.dropna(subset=["X", "Y"])
+
+fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Ball Recoveries Heatmap")
+fig.patch.set_facecolor("#133617")
+
+# Bin + smooth
+bin_stat = pitch.bin_statistic(
+    recover_df["X"], recover_df["Y"], statistic="count", bins=(50, 50)
+)
+bin_stat["statistic"] = gaussian_filter(bin_stat["statistic"], sigma=2)
+
+# Colormap: use yellow tone for recoveries
+cmap = LinearSegmentedColormap.from_list(
+    "recover_heat", ["#133617", "#F5E700", "#FFB000", "#FF5000"]
+)
+
+pcm = pitch.heatmap(bin_stat, ax=ax, cmap=cmap, edgecolors="none", alpha=0.9, zorder=1)
+
+# Redraw lines
+pitch.draw(ax=ax)
+
+# Optional scatter overlay
+pitch.scatter(
+    recover_df["X"], recover_df["Y"], ax=ax, s=10, color="#efefef", alpha=0.15, zorder=11
+)
+
+# Colorbar
+cbar = fig.colorbar(pcm, ax=ax, shrink=0.6, pad=0.02)
+cbar.outline.set_edgecolor("#efefef")
+cbar.ax.yaxis.set_tick_params(color="#efefef")
+plt.setp(plt.getp(cbar.ax.axes, "yticklabels"), color="#efefef", fontsize=8)
+cbar.set_label("Recovery Density", color="#efefef", fontsize=9)
+
+plt.savefig("assets/reading_ball_recoveries_heatmap.png", dpi=300,
+            bbox_inches="tight", facecolor="#133617")
+plt.show()
+
+# =========================================================
+# 29. READING TURNOVERS HEATMAP
+# =========================================================
+from scipy.ndimage import gaussian_filter
+from matplotlib.colors import LinearSegmentedColormap
+
+# --- Filter team turnovers
+turnover_df = df[(df["Team"] == "Reading") & (df["IsTurnover"] == 1)].copy()
+
+# --- Clip coordinates to pitch frame 0–100 (avoid off‑pitch leaks)
+turnover_df["X"] = turnover_df["X"].clip(0, 100)
+turnover_df["Y"] = turnover_df["Y"].clip(0, 100)
+turnover_df = turnover_df.dropna(subset=["X", "Y"])
+
+# --- Create consistent pitch
+fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Turnovers Heatmap")
+fig.patch.set_facecolor("#133617")
+
+# --- Bin + smooth events
+bin_stat = pitch.bin_statistic(
+    turnover_df["X"], turnover_df["Y"],
+    statistic='count',
+    bins=(50, 50)
+)
+bin_stat['statistic'] = gaussian_filter(bin_stat['statistic'], sigma=2)
+
+# --- Custom colormap (safe → warning → critical)
+cmap = LinearSegmentedColormap.from_list(
+    "turnover_heat",
+    ["#133617", "#F5E700", "#FF6B00", "#FF0000"]
+)
+
+# --- Draw smooth heatmap
+pcm = pitch.heatmap(
+    bin_stat,
+    ax=ax,
+    cmap=cmap,
+    edgecolors='none',
+    alpha=0.9,
+    zorder=1       # allow lines later to sit on top
+)
+
+# --- Redraw crisp white pitch lines over the heatmap
+pitch.draw(ax=ax)
+
+# --- Optional subtle event markers
+pitch.scatter(
+    turnover_df["X"], turnover_df["Y"],
+    ax=ax,
+    s=8, color="#efefef",
+    alpha=0.15, zorder=11
+)
+
+# --- Colorbar styling
+cbar = fig.colorbar(pcm, ax=ax, shrink=0.6, pad=0.02)
+cbar.outline.set_edgecolor("#efefef")
+cbar.ax.yaxis.set_tick_params(color="#efefef")
+plt.setp(plt.getp(cbar.ax.axes, "yticklabels"), color="#efefef", fontsize=8)
+cbar.set_label("Turnover Density", color="#efefef", fontsize=9)
+
+# --- Save final figure
+plt.savefig("assets/reading_turnovers_heatmap.png", dpi=300,
+            bbox_inches="tight", facecolor="#133617")
+plt.show()
+
+# =========================================================
+# 30. READING PROGRESSIVE ACTION START HEATMAP
+# =========================================================
+from scipy.ndimage import gaussian_filter
+from matplotlib.colors import LinearSegmentedColormap
+
+# --- Filter data
+prog_df = df[(df["Team"] == "Reading") & (df["ProgressiveAction"] == 1)].copy()
+
+# --- Clean coordinates
+prog_df["X"] = prog_df["X"].clip(0, 100)
+prog_df["Y"] = prog_df["Y"].clip(0, 100)
+prog_df = prog_df.dropna(subset=["X", "Y"])
+
+# --- Standard pitch
+fig, ax, pitch = draw_mplsoccer_pitch(title="Reading Progressive Action Start Heatmap")
+fig.patch.set_facecolor("#133617")
+
+# --- Bin + smooth starting points
+bin_stat = pitch.bin_statistic(
+    prog_df["X"], prog_df["Y"], statistic='count', bins=(50, 50)
+)
+bin_stat["statistic"] = gaussian_filter(bin_stat["statistic"], sigma=2)
+
+# --- Colormap (bright yellow → red, fits brand)
+cmap = LinearSegmentedColormap.from_list(
+    "prog_heat", ["#133617", "#F5E700", "#FF6B00", "#FF0000"]
+)
+
+# --- Draw heatmap and re‑apply white lines
+pcm = pitch.heatmap(bin_stat, ax=ax, cmap=cmap, edgecolors='none', alpha=0.9, zorder=1)
+pitch.draw(ax=ax)
+
+# --- Optional scatter overlay
+pitch.scatter(prog_df["X"], prog_df["Y"], ax=ax,
+              s=10, color="#efefef", alpha=0.15, zorder=11)
+
+# --- Colorbar
+cbar = fig.colorbar(pcm, ax=ax, shrink=0.6, pad=0.02)
+cbar.outline.set_edgecolor('#efefef')
+cbar.ax.yaxis.set_tick_params(color='#efefef')
+plt.setp(plt.getp(cbar.ax.axes, 'yticklabels'), color='#efefef', fontsize=8)
+cbar.set_label("Action Start Density", color='#efefef', fontsize=9)
+
+plt.savefig("assets/reading_progressive_action_starts_heatmap.png",
+            dpi=300, bbox_inches="tight", facecolor="#133617")
+plt.show()
