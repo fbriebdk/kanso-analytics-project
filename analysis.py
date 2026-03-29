@@ -651,7 +651,7 @@ ax.set_title(
 
 os.makedirs("assets", exist_ok=True)
 plt.savefig("assets/reading_turnovers_danger.png", dpi=300,
-            bbox_inches="tight", facecolor="#0a1a0c")
+            bbox_inches="tight", facecolor="#133617")
 plt.show()
 
 print(f"Turnover danger map saved. Critical: {critical_count}/{total_count}")
