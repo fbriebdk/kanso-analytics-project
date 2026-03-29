@@ -599,7 +599,7 @@ for _, row in turnover_df.iterrows():
         zorder=4
     )
     sc.set_path_effects([
-        pe.Stroke(linewidth=2.5, foreground="#000000"),
+        pe.Stroke(linewidth=2.5, foreground="#133617"),
         pe.Normal()
     ])
 

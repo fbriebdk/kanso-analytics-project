@@ -1,4 +1,4 @@
-﻿# kanso-analytics-project
+��﻿# kanso-analytics-project
 # ⚽ Kanso Analytics Competition – Match Analysis Dashboard
 
 This project was developed as part of the **Kanso Analytics Performance Analysis Competition**, where the objective was to extract match event data from video footage and transform it into a clear, interactive, and insightful dashboard.
@@ -46,7 +46,7 @@ pip install pandas numpy matplotlib mplsoccer
 python analysis.py
 ```
 
-4. Outputs (CSV + visuals) will be generated in the outputs/ folder.
+4. Outputs (CSV + visualswill be generated in the outputs/ folder.
 
 ---
 
@@ -118,4 +118,4 @@ The Power BI dashboard is designed to:
 
 - Created by Liam,
 - For collaboration or analytics opportunities, feel free to connect.
-- LinkedIN: (https://www.linkedin.com/in/liam-bugeja-9957a0208/)
+- LinkedIN: (https://www.linkedin.com/in/liam-bugeja-9957a0208/)
