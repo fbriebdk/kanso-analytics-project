@@ -47,7 +47,7 @@ football-analytics-project/
 ## 📸 Visual Examples
 
 ### 📊  Reading Events Action Starts
-![Image](assets\reading_action_starts.png)
+![](assets/reading_action_starts.png)
 
 ### 🗺️ Reading Progressive Actions
 ![](assets/reading_progressive_actions.png)
