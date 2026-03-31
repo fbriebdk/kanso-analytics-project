@@ -1,121 +1,120 @@
-��﻿# kanso-analytics-project
-# ⚽ Kanso Analytics Competition – Match Analysis Dashboard
-
-This project was developed as part of the **Kanso Analytics Performance Analysis Competition**, where the objective was to extract match event data from video footage and transform it into a clear, interactive, and insightful dashboard.
+# ⚽ Football Analytics Project
+> Turning raw match data into actionable insights.
 
 ---
 
-## 📊 Project Overview
+## 📌 Overview
+This project focuses on building a complete football analytics pipeline, transforming raw event data into meaningful insights. It covers data processing, event tagging, performance analysis, and visualization.
 
-Using manually tagged event data from a full match, this project focuses on analyzing **Reading's performance**, with an emphasis on:
-
-- Ball progression
-- Final third entries
-- Box entries
-- Shot creation
-- Ball recoveries and transitions
-
-The data was processed using Python and visualized using both **mplsoccer** and **Power BI** to create a clean, user-friendly analytical dashboard.
+The aim is to simulate a real-world analyst workflow — from raw data to decision-making dashboards.
 
 ---
 
-## 🛠️ Tools & Technologies
-
-- Python (pandas, numpy, matplotlib)
-- mplsoccer (pitch visualizations)
-- Power BI (interactive dashboard)
-- Git & GitHub (version control)
-
----
-
-## ⚙️ How to Run the Project
-
-1. Clone the repository:
-```bash
-git clone https://github.com/fbriebdk/kanso-analytics-project.git
-cd kanso-analytics-project
-```
-
-2. Install Dependencies:
-```bash
-pip install pandas numpy matplotlib mplsoccer
-```
-
-3. Run the analysis script:
-```bash
-python analysis.py
-```
-
-4. Outputs (CSV + visualswill be generated in the outputs/ folder.
+## 🚀 Features
+- ✅ Event data cleaning and preprocessing  
+- ✅ Custom event tagging logic  
+- ✅ Player and team performance metrics  
+- ✅ Data visualization dashboards  
+- ✅ Modular and scalable project structure  
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Tech Stack
+- **Python** (Pandas, NumPy)
+- **Power BI** (or other visualization tools)
+- **Git & GitHub**
+- **Jupyter Notebooks**
 
-kanso_analytics_project/
+---
+
+## 📂 Project Structure
+football-analytics-project/
 │
-├── data/
-│   ├── events_v1_h1.csv
-│   ├── events_v2_h1.csv
-│   └── final_events_half_1.csv
-│
-├── outputs/               # Generated visuals & datasets (ignored in Git)
-│
-├── analysis.py           # Main analysis pipeline
-├── README.md
-└── .gitignore
+├── data/ # Raw and processed datasets
+├── notebooks/ # Exploratory analysis
+├── src/ # Core scripts (event tagging, processing)
+├── dashboards/ # Power BI dashboards / exports
+├── assets/ # Images used in README
+└── README.md
+
 
 ---
 
-## 📈 Key Insights
-
-- Reading City FC produced 58 progressive actions, indicating strong ability to move the ball forward.
-- However, only 28 final third entries and 12 box entries were generated.
-- This resulted in just 5 shots.
-
----
-
-### 👉 Insight:
-
-Reading City FC are effective at progressing into advanced areas, but struggle to convert possession into high-quality scoring opportunities. This suggests inefficiency in final third decision-making and chance creation.
+## 📊 Key Analysis Areas
+- Player performance evaluation  
+- Passing and progression metrics  
+- Defensive and offensive event analysis  
+- Custom KPIs based on match events  
 
 ---
 
-## 🎯 Dashboard Focus
+## 📸 Visual Examples
 
-The Power BI dashboard is designed to:
+### 📊 Dashboard Overview
+![Dashboard](assets/dashboard.png)
 
-- Provide a clear and structured performance overview
-- Allow users to switch between key KPIs (interactive UX)
-- Visualize tactical patterns using pitch maps
-- Highlight strengths and weaknesses through data storytelling
+### 🗺️ Event Mapping Example
+![Event Map](assets/event_map.png)
 
----
-
-## 📊 Example Visuals
-
-### Final Third Entries
-![Final Third Entries](assets/reading_final_third_entries_colored.png)
-
-### Shot Map
-![Shot Map](assets/reading_shot_map_colored.png)
-
-### Progressive Actions
-![Progressive Actions](assets/reading_progressive_actions.png)
+> 📌 To display images correctly:
+> - Place them inside an `assets/` folder
+> - Use relative paths like: `assets/image.png`
 
 ---
 
-## 🚀 Future Improvements
+## ⚙️ Setup & Installation
 
-- Include second half analysis
-- Add player-level metrics
-- Automate event tagging workflow
-- Expand defensive and pressing analysis
+### 1. Clone the repository
+
+git clone https://github.com/your-username/football-analytics-project.git
+
+
+### 2. Navigate into the project
+
+cd football-analytics-project
+
+
+### 3. Create virtual environment (optional but recommended)
+
+python -m venv .venv
+
+
+Activate environment:
+
+- Windows:
+
+.venv\Scripts\activate
+
+
+- Mac/Linux:
+
+source .venv/bin/activate
+
+
+### 4. Install dependencies
+
+pip install -r requirements.txt
+
+
+---
+
+## ▶️ Usage
+Run scripts or notebooks depending on your workflow:
+
+- Use notebooks for exploration and analysis
+- Use `src/` scripts for reusable processing logic
+- Open dashboards in Power BI for visualization
+
+---
+
+## 🧠 Future Improvements
+- Implement advanced metrics (xG, xA, etc.)
+- Automate full data pipeline
+- Deploy dashboards online
+- Integrate live or API-based data sources
 
 ---
 
 ## 📬 Contact
-
-- Created by Liam,
-- For collaboration or analytics opportunities, feel free to connect.
-- LinkedIN: (https://www.linkedin.com/in/liam-bugeja-9957a0208/)
+Liam Bugeja
+LinkedIN: https://www.linkedin.com/in/liam-bugeja-9957a0208/
