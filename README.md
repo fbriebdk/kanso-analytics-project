@@ -50,7 +50,7 @@ football-analytics-project/
 ![Image](assets\reading_action_starts.png)
 
 ### 🗺️ Reading Progressive Actions
-!(assets/reading_progressive_actions.png)
+![](assets/reading_progressive_actions.png)
 
 > 📌 To display images correctly:
 > - Place them inside an `assets/` folder
