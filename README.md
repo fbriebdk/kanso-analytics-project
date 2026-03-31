@@ -47,10 +47,10 @@ football-analytics-project/
 ## 📸 Visual Examples
 
 ### 📊  Reading Events Action Starts
-![Picture](assets\reading_action_starts.png)
+![Image](assets\reading_action_starts.png)
 
 ### 🗺️ Reading Progressive Actions
-![Picture](assets\reading_progressive_actions.png)
+![Image](assets\reading_progressive_actions.png)
 
 > 📌 To display images correctly:
 > - Place them inside an `assets/` folder
