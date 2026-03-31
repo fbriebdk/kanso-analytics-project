@@ -6,8 +6,6 @@
 ## 📌 Overview
 This project focuses on building a complete football analytics pipeline, transforming raw event data into meaningful insights. It covers data processing, event tagging, performance analysis, and visualization.
 
-The aim is to simulate a real-world analyst workflow — from raw data to decision-making dashboards.
-
 ---
 
 ## 🚀 Features
@@ -20,10 +18,9 @@ The aim is to simulate a real-world analyst workflow — from raw data to decisi
 ---
 
 ## 🛠️ Tech Stack
-- **Python** (Pandas, NumPy)
-- **Power BI** (or other visualization tools)
+- **Python** (Pandas, NumPy, and more)
+- **Power BI** 
 - **Git & GitHub**
-- **Jupyter Notebooks**
 
 ---
 
@@ -31,10 +28,9 @@ The aim is to simulate a real-world analyst workflow — from raw data to decisi
 football-analytics-project/
 │
 ├── data/ # Raw and processed datasets
-├── notebooks/ # Exploratory analysis
-├── src/ # Core scripts (event tagging, processing)
-├── dashboards/ # Power BI dashboards / exports
+├── analysis.py # main python script
 ├── assets/ # Images used in README
+├── outputs/
 └── README.md
 
 
@@ -50,11 +46,11 @@ football-analytics-project/
 
 ## 📸 Visual Examples
 
-### 📊 Dashboard Overview
-![Dashboard](assets/dashboard.png)
+### 📊  Reading Events Action Starts
+![Picture](assets\reading_action_starts.png)
 
-### 🗺️ Event Mapping Example
-![Event Map](assets/event_map.png)
+### 🗺️ Reading Progressive Actions
+![Picture](assets\reading_progressive_actions.png)
 
 > 📌 To display images correctly:
 > - Place them inside an `assets/` folder
@@ -66,7 +62,7 @@ football-analytics-project/
 
 ### 1. Clone the repository
 
-git clone https://github.com/your-username/football-analytics-project.git
+git clone: https://github.com/fbriebdk/kanso-analytics-project.git
 
 
 ### 2. Navigate into the project
