@@ -52,10 +52,6 @@ football-analytics-project/
 ### 🗺️ Reading Progressive Actions
 ![](assets/reading_progressive_actions.png)
 
-> 📌 To display images correctly:
-> - Place them inside an `assets/` folder
-> - Use relative paths like: `assets/image.png`
-
 ---
 
 ## ⚙️ Setup & Installation
